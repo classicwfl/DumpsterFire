@@ -1,6 +1,11 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors',1);
 
 require dirname(__FILE__) . '/vars.php';
+//require dirname(__FILE__) . '/../vendor/autoload.php';
+
+use Azuyalabs\WAQI\WAQI;
 
 class DumpsterFires 
 
@@ -33,32 +38,32 @@ class DumpsterFires
     public function addNewAqi() 
 
     {
-        $googleAqiUrl = 'https://airquality.googleapis.com/v1/currentConditions:lookup?key=' . $_ENV['APIKEY'];
-        $googleAqiQuery = [
-            "location" => [
-                "latitude" => 39.935490,
-                "longitude" => -91.408241
-            ],
-            "extra_computations" => [
-                "POLLUTANT_CONCENTRATION"
-            ]
-        ];
+        // $googleAqiUrl = 'https://airquality.googleapis.com/v1/currentConditions:lookup?key=' . $_ENV['APIKEY'];
+        // $googleAqiQuery = [
+        //     "location" => [
+        //         "latitude" => 39.935490,
+        //         "longitude" => -91.408241
+        //     ],
+        //     "extra_computations" => [
+        //         "POLLUTANT_CONCENTRATION"
+        //     ]
+        // ];
 
-        $AqiQueryOpts = [
-            'http' => [
-                'header' => "Content-type: application/x-www-form-urlencoded\r\n",
-                'method' => 'POST',
-                'content' => http_build_query($googleAqiQuery),
-            ],
-        ];
+        // $AqiQueryOpts = [
+        //     'http' => [
+        //         'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+        //         'method' => 'POST',
+        //         'content' => http_build_query($googleAqiQuery),
+        //     ],
+        // ];
 
-        $context = stream_context_create($AqiQueryOpts);
-        $result = file_get_contents($googleAqiUrl, false, $context);
+        // $context = stream_context_create($AqiQueryOpts);
+        // $result = file_get_contents($googleAqiUrl, false, $context);
 
-        if ($result === false) {
-            /* Handle error */
-            return "No results";
-        }
+        // if ($result === false) {
+        //     /* Handle error */
+        //     return "No results";
+        // }
 
         // Need to fetch latest AQI from API
         // POST https://airquality.googleapis.com/v1/currentConditions:lookup?key="$_ENV['APIKEY']"
@@ -75,7 +80,13 @@ class DumpsterFires
 
         // Insert into DB
 
-        return json_decode($result);
+        $waqi = new WAQI($_ENV['APIKEY']);
+
+        $waqi->getObservationByStation('A409543');
+
+        $result = $waqi->getAQI();
+
+        return $result;
     }
 
 }
