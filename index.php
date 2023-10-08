@@ -25,7 +25,7 @@ $objDumpsterFires = new DumpsterFires($conn);
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <pre><?php echo var_dump($objDumpsterFires->addNewAqi()); ?></pre>
+        <pre><?php echo var_dump($objDumpsterFires->getLatestAqi()); ?></pre>
 
         <script src="bundle.js" async defer></script>
     </body>
