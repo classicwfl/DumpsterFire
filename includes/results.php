@@ -33,14 +33,17 @@ class DumpsterFires
 
         $older = new DateTime($Aqi[0]['LatestDate']);
 
+        // Here's where we compare the date/time to know if we need to grab a new AQI value
         $interval = $current->diff($older);
         $hoursDifference = $interval->h + ($interval->days * 24);
 
         if ($hoursDifference > 1) {
             $AqiReturn = self::addNewAqi();
         } else {
-            $AqiReturn = $Aqi[0]['AQI'] . " from DB";
+            $AqiReturn = $Aqi[0]['AQI'];
         }
+
+        //Swap to this to do the interval every 15 min
 
         // $minutesDifference = $interval->i + ($interval->h * 60);
 
@@ -57,11 +60,11 @@ class DumpsterFires
     public function addNewAqi() 
 
     {
-        // Get the Waqi value here
+        // Get the WAQI value here
 
         $waqi = new WAQI($_ENV['APIKEY']);
 
-        $waqi->getObservationByStation('A409543');
+        $waqi->getObservationByStation($_ENV['STATION']);
 
         $result = $waqi->getAQI();
 

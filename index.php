@@ -19,14 +19,15 @@ $objDumpsterFires = new DumpsterFires($conn);
         <title>How much of a dumpster fire is the air quality?</title>
         <meta name="description" content="A unique air quality index meter: How much of a dumpster fire is the air quality today?">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="bundle.css">
+        <link rel="stylesheet" href="prod/css/styles.css">
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <pre><?php echo var_dump($objDumpsterFires->getLatestAqi()); ?></pre>
+        <div id="df_stat"><?php echo $objDumpsterFires->getLatestAqi(); ?></div>
+        <div class="df_artWrapper df_artWrapper--fucked"></div>
 
-        <script src="bundle.js" async defer></script>
+        <script src="prod/js/js_main.js" async defer></script>
     </body>
 </html>
