@@ -1,13 +1,12 @@
 <?php
-// error_reporting(E_ALL);
-// ini_set('display_errors',1);
+error_reporting(E_ALL);
+ini_set('display_errors',1);
 
 require dirname(__FILE__) . '/vars.php';
 
 use Azuyalabs\WAQI\WAQI;
 
 class DumpsterFires 
-
 {
 
     private $conn;
@@ -29,7 +28,7 @@ class DumpsterFires
 
         $Aqi = $result->fetch_all(MYSQLI_ASSOC);
 
-        if (!$Aqi[0]['AQI']) {
+        if (!$Aqi) {
             $AqiReturn = self::addNewAqi();
 
             return $AqiReturn;
@@ -68,11 +67,13 @@ class DumpsterFires
         $result = $waqi->getAQI();
 
         $aqi = $result['aqi'];
+        
+        $thetime = date("Y-m-d H:i:s");
 
         // Insert into DB if valid
 
         if ($aqi) {
-            $sql = "INSERT INTO Aqi (AQI) VALUES (" . $aqi .  ")";
+            $sql = "INSERT INTO Aqi (AQI, CurrentDateTime) VALUES (" . $aqi .  ", '" . $thetime . "')";
 
             $dbresult = $this->conn->query($sql);
 
