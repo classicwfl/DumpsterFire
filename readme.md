@@ -7,7 +7,7 @@ Anyway, if you want to duplicate this for yourself, here's what you need to know
 
 ## Using this on your own project
 
-Be sure to run ```composer install``` first to load up the necessary stuff for composer.
+Be sure to run ```composer install``` first to load up the necessary stuff for composer. It's just for something to read .env vars, and an interface for the WAQI API.
 
 You'll need to create a DB for this project, and you can populate it with the following SQL:
 
