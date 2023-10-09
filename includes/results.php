@@ -29,6 +29,12 @@ class DumpsterFires
 
         $Aqi = $result->fetch_all(MYSQLI_ASSOC);
 
+        if (!$Aqi[0]['AQI']) {
+            $AqiReturn = self::addNewAqi();
+
+            return $AqiReturn;
+        }
+
         $current = new DateTime();
 
         $older = new DateTime($Aqi[0]['LatestDate']);
