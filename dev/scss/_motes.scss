@@ -1,0 +1,137 @@
+.df_moteContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    pointer-events: none;
+}
+
+.mote {
+    opacity:0;
+    position: absolute;
+    border-radius: 100%;
+    z-index: 90;
+    overflow: hidden;
+
+    &--best {
+        background-color: rgba(255,255,255,.3);
+        animation: motes1 7s ease-in infinite;
+
+        &:nth-child(4n) {
+            animation: motes2 11s ease-in infinite;
+        }
+
+        &:nth-child(4n+2) {
+            animation: motes3 10s ease-in infinite;
+        }
+    }
+
+    &--good {
+        background-color: rgba(255,255,255,.3);
+        animation: motes1 7s ease-in infinite;
+
+        &:nth-child(4n) {
+            animation: motes2 11s ease-in infinite;
+        }
+
+        &:nth-child(4n+2) {
+            animation: motes3 10s ease-in infinite;
+        }
+    }
+
+    &--fair {
+        background-color: rgba(255,255,255,.6);
+        animation: motes1 7s ease-in infinite;
+
+        &:nth-child(4n) {
+            animation: motes2 11s ease-in infinite;
+        }
+
+        &:nth-child(4n+2) {
+            animation: motes3 10s ease-in infinite;
+        }
+    }
+
+    &--bad, &--notgood {
+        background-color: rgba(255, 136, 0, 0.5);
+        animation: motes1 5s ease-in infinite;
+
+        &:nth-child(4n) {
+            animation: motes2 8s ease-in infinite;
+        }
+
+        &:nth-child(4n+2) {
+            animation: motes3 7s ease-in infinite;
+        }
+    }
+
+    &--shit {
+        background-color: rgba(0,0,0,.6);
+        animation: motes1 4s ease-in infinite;
+
+        &:nth-child(4n) {
+            animation: motes2 7s ease-in infinite;
+        }
+
+        &:nth-child(4n+2) {
+            animation: motes3 6s ease-in infinite;
+        }
+    }
+
+    &--fucked {
+        background-color: rgba(21, 9, 26, 0.9);
+        animation: motes1 4s ease-in infinite;
+
+        &:nth-child(4n) {
+            animation: motes2 7s ease-in infinite;
+        }
+
+        &:nth-child(4n+2) {
+            animation: motes3 6s ease-in infinite;
+        }
+    }
+}
+
+@keyframes motes1 {
+    0% {
+        opacity: 0;
+     }
+     20% {
+        opacity: 1;
+        transform:translate(5%, -20%);
+     }
+     100% {
+        opacity: 0;
+        transform:translate(200%, -6500%);
+     }
+}
+
+@keyframes motes2 {
+    0% {
+        opacity: 0;
+     }
+     20% {
+        opacity: 1;
+        transform:translate(3%, -20%);
+     }
+     100% {
+        opacity: 0;
+        transform:translate(450%, -4200%);
+     }
+}
+
+@keyframes motes3 {
+    0% {
+        opacity: 0;
+     }
+     20% {
+        opacity: 1;
+        transform:translate(2%, -20%);
+     }
+     100% {
+        opacity: 0;
+        transform:translate(175%, -9700%);
+     }
+}

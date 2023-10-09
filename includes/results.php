@@ -35,24 +35,12 @@ class DumpsterFires
 
         // Here's where we compare the date/time to know if we need to grab a new AQI value
         $interval = $current->diff($older);
-        $hoursDifference = $interval->h + ($interval->days * 24);
 
-        if ($hoursDifference > 1) {
+        if ($interval->h >= 1 || $interval->days > 0) {
             $AqiReturn = self::addNewAqi();
         } else {
             $AqiReturn = $Aqi[0]['AQI'];
         }
-
-        //Swap to this to do the interval every 15 min
-
-        // $minutesDifference = $interval->i + ($interval->h * 60);
-
-        // // Check if the difference is more than 15 minutes
-        // if ($minutesDifference > 15) {
-        //     $AqiReturn = self::addNewAqi();
-        // } else {
-        //     $AqiReturn = $Aqi[0]['AQI'] . " from DB";
-        // }
 
         return $AqiReturn;
     }
