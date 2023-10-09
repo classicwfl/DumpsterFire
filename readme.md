@@ -1,7 +1,7 @@
 
 # The Dumpster Fire Project
 
-The Dumpster Fire Project is a somewhat cutesy (and occasionally filled with vulgar gallows humor) method of rendering the air quality on the web. It's actually part of a larger project I'm considering, where I will be creating a visualization for an extended time period of how the air quality has changed.
+The Dumpster Fire Project is a somewhat cutesy (and occasionally filled with vulgar gallows humor) method of rendering the air quality on the web. It's actually part of a larger project I'm considering, where I will be creating a visualization for an extended time period of how the air quality has changed. You can view it at https://classicwfl.com/projects/dumpsterfire/ 
 
 Anyway, if you want to duplicate this for yourself, here's what you need to know.
 
@@ -15,7 +15,7 @@ You'll need to create a DB for this project, and you can populate it with the fo
 CREATE TABLE Aqi (
     ID INT PRIMARY KEY AUTO_INCREMENT,
     AQI INT,
-    CurrentDateTime DATETIME DEFAULT CURRENT_TIMESTAMP
+    CurrentDateTime DATETIME
 );
 ```
 
