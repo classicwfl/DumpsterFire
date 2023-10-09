@@ -13,7 +13,7 @@ $theAqi = $objDumpsterFires->getLatestAqi();
 //Heading language
 
 $heading["best"] = [
-    "The world is simplify beautiful.", 
+    "The world is simply beautiful.", 
     "Taking a breath today is actually enjoyable.",
     "Is this what the air was like before farts and pollution were invented?"
 ];
