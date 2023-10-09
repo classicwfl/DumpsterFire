@@ -38,6 +38,11 @@ class DumpsterFires
 
         if ($interval->h >= 1 || $interval->days > 0) {
             $AqiReturn = self::addNewAqi();
+
+            //Just in case the API doesn't come back with a value
+            if (!$AqiReturn) {
+                $AqiReturn = $Aqi[0]['AQI'];
+            }
         } else {
             $AqiReturn = $Aqi[0]['AQI'];
         }
@@ -58,17 +63,22 @@ class DumpsterFires
 
         $aqi = $result['aqi'];
 
-        // Insert into DB
+        // Insert into DB if valid
 
-        $sql = "INSERT INTO Aqi (AQI) VALUES (" . $aqi .  ")";
+        if ($aqi) {
+            $sql = "INSERT INTO Aqi (AQI) VALUES (" . $aqi .  ")";
 
-        $dbresult = $this->conn->query($sql);
+            $dbresult = $this->conn->query($sql);
 
-        if ($dbresult == TRUE) {
-            $AqiResult = $aqi;
+            if ($dbresult == TRUE) {
+                $AqiResult = $aqi;
+            } else {
+                $AqiResult = 0;
+            }
         } else {
             $AqiResult = 0;
         }
+        
 
         return $AqiResult;
     }

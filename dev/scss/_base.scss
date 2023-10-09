@@ -53,15 +53,15 @@ a {
 }
 
 .df_about {
-    position: absolute;
-    bottom: 15px;
+    position: fixed;
+    top: 15px;
     right: 15px;
     width: 290px;
     z-index: 300;
 
     @media (max-width: 700px) {
         width: auto;
-        bottom: 5px;
+        top: 5px;
         right: 5px;
         left: 5px;
     }
@@ -80,6 +80,8 @@ a {
         padding: 10px;
         opacity: .7;
         border-radius: 5px;
+        font-family: "kit-rounded", sans-serif;
+        cursor: pointer;
 
         &:hover {
             opacity: 1;

@@ -27,7 +27,7 @@ For the front-end, just run ```npm install``` and then ```npm run watch``` while
 
 For deployment, be sure to not upload the ```/dev``` or ```/node_modules``` folders, and if you're not able to use .htaccess then either hard-code the vars in your deployment or make sure .env is inaccessible from outside.
 
-Finally, please don't use my Adobe Typekit kit in your version. Get your own fonts :D 
+Also, strip out the Typekit stuff if you're not using it for fonts (you'll need to have your own project set up to use it FYI).
 
 ## License, Rules, and Whatever
 

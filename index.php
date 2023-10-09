@@ -15,43 +15,50 @@ $theAqi = $objDumpsterFires->getLatestAqi();
 $heading["best"] = [
     "The world is simply beautiful.", 
     "Taking a breath today is actually enjoyable.",
-    "Is this what the air was like before farts and pollution were invented?"
+    "Is this what air was like before farts and pollution were invented?",
+    "It's like getting a spa treatment for your lungs right now."
 ];
 
 $heading["good"] = [
-    "It's cleaner than my glasses outside.",
+    "The air is cleaner than my glasses.",
     "Maybe just a bit too much pine-sol, but otherwise good.",
-    "Not quite as good as a new Glade plug-in, but good enough."
+    "If Lacroix was air, it'd be this.",
+    "It's pleasant; like good elevator music."
 ];
 
 $heading["fair"] = [
     "At least it's not a snowglobe and ashtray combined.",
     "I mean.. It's not horrible.",
-    "Not entirely unlike sorta clean air."
+    "Not entirely unlike sorta clean air.",
+    "Breathing now is like a gentle reminder from your lungs that they exist."
 ];
 
 $heading["notgood"] = [
     "The air is about like Woodstock in the 70s, but you don't get high.",
     "Peter Piper picked a peck of plentiful particulates. Gross.",
-    "No matter how bad your day is, it's not worth taking a deep breathe. Just seethe."
+    "No matter how bad your day is, it's not worth taking a deep breathe. Just seethe.",
+    "The air quality is a real-life version of the 'Guess That Smell' game show."
 ];
 
 $heading["bad"] = [
     "Dammit, was there a flashmob of gassy smokers?",
     "Did I just deep-throat Satan? This shit burns.",
-    "Help! I'm being hotboxed by the cigar-smoking, poker-playing dogs!"
+    "Help! I'm being hotboxed by the cigar-smoking, poker-playing dogs!",
+    "If the air had a slogan, it'd be 'Where breathing is an extreme sport'."
 ];
 
 $heading["shit"] = [
     "Hold your breathe.. and, well, wear goggles. And hazmat suits.",
-    "I imagine the neighbor's kid made a giant real volcano for a science fair project.",
-    "I think at this point I'm sealing up the doors and windows."
+    "Imagine Satan sharting into your snorkel.",
+    "I think at this point I'm sealing up the doors and windows.",
+    "The air quality is so toxic that it's been nominated for 'Worst Supporting Atmosphere'."
 ];
 
 $heading["fucked"] = [
-    "This is literally a dumpster fire.",
+    "This may as well be a dumpster fire.",
     "If we go outside we're gonna die.",
-    "What the fuck are you doing here? GET TO THE NUCLEAR SHELTER."
+    "What the fuck are you doing here? GET TO THE NUCLEAR SHELTER.",
+    "Even indoor plants would rather bein a vacuum right now."
 ];
 
 switch ($theAqi) {
@@ -101,7 +108,7 @@ switch ($theAqi) {
         <meta property="og:image:height" content="900">
 
         <!-- If you're deploying this for youself, please remove this! --> 
-        <link rel="stylesheet" href="https://use.typekit.net/cld2uzu.css">
+        <link rel="stylesheet" href="https://use.typekit.net/<?php echo $_ENV['TYPEKIT']; ?>.css">
 
         <link rel="stylesheet" href="prod/css/styles.css">
         <script src="prod/js/js_main.js"></script>
@@ -122,14 +129,14 @@ switch ($theAqi) {
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <div id="df_artWrapper" aria-hidden="true" class="df_artWrapper df_artWrapper--<?php echo $quality ?>"></div>
-        <div class="df_contentWrap"><h1><?php echo $heading[$quality][rand(0,2)]; ?></div>
+        <div class="df_contentWrap"><h1><?php echo $heading[$quality][rand(0,3)]; ?></div>
         <div id="df_moteContainer" aria-hidden="true" class="df_moteContainer" data-stat="<?php echo $theAqi; ?>" data-quality="<?php echo $quality; ?>"></div>
         <div class="df_about">
             <button aria-hidden="true">What is this?</button>
             <div class="df_aboutInner">
                 <div class="df_aboutInner__text">
-                    <p><strong>This is the Dumpster Fire project.</strong> I created this to showcase the air quality in a more visual and (in many cases) gallows-humor fashion.</p>
-                    <p>We've got a real problem with air quality Wildfires, pollution, and more make the air unacceptable for many folks.. And in some cases, downright dangerous for even healthy people.</p>
+                    <p><strong>This is the Dumpster Fire project.</strong> I created this to showcase the air quality in my area in a more visual and (in many cases) gallows-humor fashion.</p>
+                    <p>Sometimes we have a real problem with air quality: Wildfires, pollution, and more make the air unacceptable for many folks.. And in some cases, downright dangerous for even healthy people. If there ever is another moment like that again, I want to showcase it's impact in a meaningful way.</p>
                     <p><a href="https://github.com/classicwfl/DumpsterFire" target="_blank">Grab the source code here</a>.</p>
                 </div>
             </div>
