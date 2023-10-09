@@ -25,6 +25,8 @@ I've got it set to not hit the API unless it's been more than an hour since the 
 
 For the front-end, just run ```npm install``` and then ```npm run watch``` while doing dev. No hot reloads, FYI, so be sure to hit refresh yourself. I like to keep things simple. If you just want to build the JS & CSS prod files, run ```npm run build:prod```.
 
+For deployment, be sure to not upload the ```/dev``` or ```/node_modules``` folders, and if you're not able to use .htaccess then either hard-code the vars in your deployment or make sure .env is inaccessible from outside.
+
 Finally, please don't use my Adobe Typekit kit in your version. Get your own fonts :D 
 
 ## License, Rules, and Whatever

@@ -92,11 +92,30 @@ switch ($theAqi) {
         <meta name="description" content="A unique air quality index meter: How much of a dumpster fire is the air quality today?">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+
+        <meta property="og:image" content="https://classicwfl.com/projects/dumpsterfire/assets/dumpsterfireposter.jpg">
+        <meta property="og:image:width" content="1600">
+        <meta property="og:image:height" content="900">
+
         <!-- If you're deploying this for youself, please remove this! --> 
         <link rel="stylesheet" href="https://use.typekit.net/cld2uzu.css">
 
         <link rel="stylesheet" href="prod/css/styles.css">
         <script src="prod/js/js_main.js"></script>
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $_ENV['ANALYTICSID']; ?>"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', '<?php echo $_ENV['ANALYTICSID']; ?>');
+        </script>
+
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -106,7 +125,7 @@ switch ($theAqi) {
         <div class="df_contentWrap"><h1><?php echo $heading[$quality][rand(0,2)]; ?></div>
         <div id="df_moteContainer" aria-hidden="true" class="df_moteContainer" data-stat="<?php echo $theAqi; ?>" data-quality="<?php echo $quality; ?>"></div>
         <div class="df_about">
-            <button>What is this?</button>
+            <button aria-hidden="true">What is this?</button>
             <div class="df_aboutInner">
                 <div class="df_aboutInner__text">
                     <p><strong>This is the Dumpster Fire project.</strong> I created this to showcase the air quality in a more visual and (in many cases) gallows-humor fashion.</p>

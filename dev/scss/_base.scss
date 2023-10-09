@@ -39,6 +39,7 @@ a {
         font-style: italic;
         max-width: 700px;
         font-size: 64px;
+        line-height: 1.1;
 
         @media (max-width: 1100px) {
             font-size: 48px;
@@ -74,9 +75,11 @@ a {
         outline: 0;
         background-color: #fff;
         color: #000;
-        text-transform: uppercase;
+        font-weight: 800;
+        font-style: italic;
         padding: 10px;
         opacity: .7;
+        border-radius: 5px;
 
         &:hover {
             opacity: 1;
@@ -89,6 +92,7 @@ a {
         background: rgba(0,0,0,.7);
         overflow: hidden;
         height: auto;
+        border-radius: 5px;
     }
 
     &:focus-within {
