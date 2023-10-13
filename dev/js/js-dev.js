@@ -34,10 +34,10 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
     let moteQuality = moteContainer.getAttribute("data-quality");
 
-    let moteCount = Math.floor(moteContainer.getAttribute("data-stat") / 3);
+    let moteCount = Math.floor(moteContainer.getAttribute("data-stat") / 10);
 
-    if (moteCount > 33) {
-        moteCount = 33;
+    if (moteCount > 15) {
+        moteCount = 15;
     }
 
     document.getElementById("df_artWrapper").classList.add("df_artWrapper--show");

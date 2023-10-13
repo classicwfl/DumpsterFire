@@ -8,7 +8,7 @@ $objDumpsterFires = new DumpsterFires($conn);
 
 $theAqi = $objDumpsterFires->getLatestAqi();
 
-//$theAqi = 130; //Use this to test.
+//$theAqi = 160; //Use this to test.
 
 //Heading language
 
@@ -58,7 +58,7 @@ $heading["fucked"] = [
     "This may as well be a dumpster fire.",
     "If we go outside we're gonna die.",
     "What the fuck are you doing here? GET TO THE NUCLEAR SHELTER.",
-    "Even indoor plants would rather bein a vacuum right now."
+    "Even indoor plants would rather be in a vacuum right now."
 ];
 
 switch ($theAqi) {
