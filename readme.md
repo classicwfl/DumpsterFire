@@ -1,7 +1,9 @@
 
 # The Dumpster Fire Project
 
-The Dumpster Fire Project is a somewhat cutesy (and occasionally filled with vulgar gallows humor) method of rendering the air quality on the web. It's actually part of a larger project I'm considering, where I will be creating a visualization for an extended time period of how the air quality has changed. You can view it at https://classicwfl.com/projects/dumpsterfire/ 
+The Dumpster Fire Project is a somewhat cutesy (and occasionally filled with vulgar gallows humor) method of rendering the air quality on the web. It's actually part of a larger project I'm considering, where I will be creating a visualization for an extended time period of how the air quality has changed. You can view it at https://classicwfl.com/projects/dumpsterfire/ and read more about the how/why here: https://painpropaganda.com/blog/posts/what-a-dumpster-fire/ 
+
+And because I'm sure someone won't read the link and will complain about it: Yes, the CPU usage is supposed to ramp up high on bad air quality. That's why I didn't use a more efficient particle method. Took a while to dial in the right amount of CPU usage for an average users' PC, but I feel like I hit a good sweet spot there.
 
 Anyway, if you want to duplicate this for yourself, here's what you need to know.
 
