@@ -33,4 +33,4 @@ Also, strip out the Typekit stuff if you're not using it for fonts (you'll need 
 
 ## License, Rules, and Whatever
 
-I'm not attaching any sort of license here; feel free to do whatever you like with it. There's nothing exciting here code-wise, just some clean, simple fun.
+After some folks bugged me about it, I finally added a real license: BSD Zero Clause. It's in the license.md file. Basically, do whatever you like, but I'm not liable for damages, failure to pay attention to road signs, food poisoning, etc.
