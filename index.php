@@ -131,11 +131,12 @@ switch ($theAqi) {
         <div id="df_artWrapper" aria-hidden="true" class="df_artWrapper df_artWrapper--<?php echo $quality ?>"></div>
         <div class="df_contentWrap"><h1><?php echo $heading[$quality][rand(0,3)]; ?></div>
         <div id="df_moteContainer" aria-hidden="true" class="df_moteContainer" data-stat="<?php echo $theAqi; ?>" data-quality="<?php echo $quality; ?>"></div>
+        <div class="df_location">Currently Tracking: Gaza</div>
         <div class="df_about">
             <button aria-hidden="true">What is this?</button>
             <div class="df_aboutInner">
                 <div class="df_aboutInner__text">
-                    <p><strong>This is the Dumpster Fire project.</strong> I created this to showcase the air quality in my area in a more visual and (in many cases) gallows-humor fashion.</p>
+                    <p><strong>This is the Dumpster Fire project.</strong> This project tracks the air quality in various locations around the world that are experiencing disasters prone to cause air quality issues.</p>
                     <p>Sometimes we have a real problem with air quality: Wildfires, pollution, and more make the air unacceptable for many folks.. And in some cases, downright dangerous for even healthy people. If there ever is another moment like that again, I want to showcase it's impact in a meaningful way.</p>
                     <p><a href="https://github.com/classicwfl/DumpsterFire" target="_blank">Grab the source code here</a>.</p>
                 </div>
