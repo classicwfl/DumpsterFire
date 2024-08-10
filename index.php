@@ -131,7 +131,7 @@ switch ($theAqi) {
         <div id="df_artWrapper" aria-hidden="true" class="df_artWrapper df_artWrapper--<?php echo $quality ?>"></div>
         <div class="df_contentWrap"><h1><?php echo $heading[$quality][rand(0,3)]; ?></div>
         <div id="df_moteContainer" aria-hidden="true" class="df_moteContainer" data-stat="<?php echo $theAqi; ?>" data-quality="<?php echo $quality; ?>"></div>
-        <div class="df_location">Currently Tracking: Northern Gaza</div>
+        <div class="df_location">Currently Tracking: Crater Lake, OR</div>
         <div class="df_about">
             <button aria-hidden="true">What is this?</button>
             <div class="df_aboutInner">
